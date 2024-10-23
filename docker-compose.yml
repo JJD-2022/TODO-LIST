@@ -1,0 +1,23 @@
+
+
+services:
+  app:
+    build: .
+    ports:
+      - "5000:5000" # Map port 5000 of the container to port 5000 of the host
+    volumes:
+      - .:/app # Mount the current directory to /app in the container
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/students
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017" # Map MongoDB port
+    volumes:
+      - mongo_data:/data/db # Persist MongoDB data
+
+volumes:
+  mongo_data:

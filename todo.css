@@ -1,0 +1,181 @@
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Ensure full height */
+    display: flex;
+    flex-direction: column; /* Allow footer to be at the bottom */
+    background-color: #f8e9f3; /* Light pink background */
+    color: #333;
+}
+
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ff4b8d; /* Pink Nav Bar */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    height: 60px;
+}
+
+.blog-title {
+    font-size: 26px;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px; /* Space between logo and title */
+}
+
+.nav-bar ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.nav-bar ul li a:hover {
+    color: #f4f4f4;
+}
+
+/* Main Container Styles */
+.main-container {
+    display: flex; /* Use flexbox for horizontal layout */
+    justify-content: space-around; /* Space out the containers */
+    margin: 40px auto; /* Center the main container */
+    flex-grow: 1; /* Allow the container to grow */
+}
+
+/* Input Container Styles */
+.input-container {
+    width: 400px; /* Fixed width for the input container */
+    height: 300px; /* Fixed height for the input container */
+    padding: 20px;
+    background-color: #ffeef8; /* Light pink container */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align text */
+    margin-right: 20px; /* Space between input and task containers */
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Arrange children vertically */
+    justify-content: center; /* Center children vertically */
+    align-items: center; /* Center children horizontally */
+}
+
+.input-container h2 {
+    font-size: 24px;
+    color: #ff4b8d; /* Darker pink for the heading */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+#task-input {
+    width: 100%; /* Full width to match the container */
+    padding: 10px;
+    margin: 10px 0; /* Space between input elements */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#add-task-btn {
+    padding: 10px 15px;
+    background-color: #ff4b8d; /* Button color */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#add-task-btn:hover {
+    background-color: #ff2469; /* Darker pink on hover */
+}
+
+/* Task Container Styles */
+.task-container {
+    width: 400px; /* Fixed width for the task container */
+    height: 300px; /* Fixed height for the task container */
+    padding: 20px;
+    background-color: #ffeef8; /* Light pink container */
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center align text */
+    margin-left: 20px; /* Space between task and input containers */
+}
+
+.task-container h2 {
+    font-size: 24px;
+    color: #ff4b8d; /* Darker pink for the heading */
+    margin-bottom: 15px; /* Space below the heading */
+}
+
+#task-list {
+    list-style: none;
+    padding: 0;
+    overflow-y: auto; /* Allow scrolling if there are many tasks */
+    height: 210px; /* Adjust height for scrolling */
+}
+
+#task-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px; /* Space between each task */
+}
+
+
+/* Additional CSS for styling the task item */
+        .task-item {
+            display: flex; /* Use flexbox for task item layout */
+            justify-content: space-between; /* Space between text and delete button */
+            align-items: center; /* Center items vertically */
+            margin: 10px 0; /* Margin between tasks */
+            padding: 10px; /* Padding around the task item */
+            border-bottom: 1px solid transparent; /* Initially no underline */
+            transition: border-color 0.3s; /* Transition for underline color */
+        }
+
+        /* Add a thin black underline on hover */
+        .task-item:hover {
+            border-color: black; /* Thin black line on hover */
+        }
+
+        .delete-btn {
+            background: none; /* No background */
+            border: none; /* No border */
+            cursor: pointer; /* Pointer cursor */
+            padding: 0; /* No padding */
+            margin-left: 10px; /* Space from task text */
+            opacity: 0; /* Initially hidden */
+            transition: opacity 0.2s; /* Fade effect */
+            font-size: 18px; /* Font size for the bin icon */
+            color: #C71585; /* Dark pink color for the icon */
+        }
+
+        .task-item:hover .delete-btn {
+		opacity: 1; /* Show delete button on hover */}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 36px;
+    background-color: #ff4b8d; /* Same color as header */
+    color: white;
+    margin-top: auto; /* Push footer to the bottom */
+}

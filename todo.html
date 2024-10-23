@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="todo.css">
+    <title>Todo List</title>
+</head>
+<body>
+    <header>
+        <div class="logo-title">
+            <img src="logo.png" alt="Logo" class="logo"> <!-- Logo -->
+            <h1 class="blog-title">Todo List</h1>
+        </div>
+        <nav class="nav-bar">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        <div class="input-container">
+            <h2>Add Your Tasks</h2>
+            <input type="text" id="task-input" placeholder="What do you wanna do today?">
+            <button id="add-task-btn">Add Task</button>
+        </div>
+        <div class="task-container">
+            <h2>Your Tasks</h2>
+            <ul id="task-list">
+                <!-- Task items will be added here -->
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Your Name. All rights reserved.
+    </footer>
+
+    <script>
+        // Function to add task to the list
+        document.getElementById('add-task-btn').addEventListener('click', function() {
+            const taskInput = document.getElementById('task-input');
+            const taskList = document.getElementById('task-list');
+            
+            const taskText = taskInput.value.trim(); // Get input value and trim whitespace
+            if (taskText !== '') {
+                const listItem = document.createElement('li'); // Create a new list item
+                listItem.className = 'task-item'; // Add class for styling
+                
+                const taskContent = document.createElement('span'); // Create a span for task text
+                taskContent.textContent = taskText; // Set the text of the task
+                listItem.appendChild(taskContent); // Append task text to list item
+                
+                // Create delete button with bin icon
+                const deleteBtn = document.createElement("button");
+                deleteBtn.classList.add("delete-btn");
+                deleteBtn.innerHTML = "🗑️"; // Bin icon (Unicode)
+
+                // Add click event to delete button
+                deleteBtn.addEventListener('click', function() {
+                    taskList.removeChild(listItem); // Remove the list item
+                });
+                
+                // Append the delete button to the list item
+                listItem.appendChild(deleteBtn);
+                taskList.appendChild(listItem); // Append the new item to the task list
+                
+                taskInput.value = ''; // Clear the input field
+            } else {
+                alert('Please enter a task!'); // Alert if input is empty
+            }
+        });
+		
+		
+    </script>
+</body>
+</html>
